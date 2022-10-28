@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is just a react challenge I found somewhere! Is just a guess the correct hexidecimal color!
+All you have to do is to clone this repository and run npm start! Have fun guessing!
 
 ## Available Scripts
 
