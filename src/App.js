@@ -4,7 +4,8 @@ import './App.css';
 const App = () => {
   const [color, setColor] = useState('');
   const [answers, setAnswers] = useState([]);
-  const [textOutput, setTextOutput] = useState('Find the correct answer');
+  const [correctPick, setCorrectPick] = useState(null);
+
   const generateRandomColor = () => {
     let maxVal = 0xffffff; // 16777215.
     let randomNumber = Math.random() * maxVal;
@@ -23,10 +24,10 @@ const App = () => {
           key={answer}
           onClick={() => {
             if (answer === color) {
-              setTextOutput('Correct');
+              setCorrectPick(true);
               generateAnswersAndColor();
             } else {
-              setTextOutput('Wrong!Keep Trying!');
+              setCorrectPick(false);
             }
           }}
         >
@@ -44,6 +45,7 @@ const App = () => {
       )
     );
   };
+
   useEffect(() => {
     generateAnswersAndColor();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,10 +54,14 @@ const App = () => {
   return (
     <div className="container">
       <div className="App" style={{ background: color }}></div>
-
       <div className="color-boxes">{displayRandomBoxes()}</div>
-      <div>{color}</div>
-      <div>{textOutput}</div>
+      {correctPick === true && <div className="text-correct">Correct!</div>}
+      {correctPick === false && (
+        <div className="text-wrong">Wrong! Try Again!</div>
+      )}
+      {correctPick === null && (
+        <div className="text-general">Guess the correct answer!</div>
+      )}
     </div>
   );
 };
