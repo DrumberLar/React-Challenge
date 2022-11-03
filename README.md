@@ -1,4 +1,4 @@
-This is just a react challenge I found somewhere! Is just a guess the correct hexidecimal color!
+<b>This is just a react challenge I found somewhere! Is just a guess the correct hexidecimal color!
 All you have to do is to clone this repository and run npm start! Have fun guessing!
 
 ## Available Scripts
