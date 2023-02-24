@@ -5,7 +5,7 @@ const App = () => {
   const [color, setColor] = useState('');
   const [answers, setAnswers] = useState([]);
   const [correctPick, setCorrectPick] = useState(null);
-
+  console.log(color);
   const generateRandomColor = () => {
     let maxVal = 0xffffff; // 16777215.
     let randomNumber = Math.random() * maxVal;
